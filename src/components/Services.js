@@ -4,6 +4,7 @@ import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
 
 export default class Services extends Component {
   state = {
+    // We are defining the services as an array to use it with the map method
     services: [
       {
         icon: <FaCocktail />,
@@ -36,9 +37,14 @@ export default class Services extends Component {
       <section className="services">
         <Title title="services" />
         <div className="services-center">
+          {/* Services is an array so we can use the map method
+          and we can pass each item into the parameter of the 
+          map method as "item" */}
           {this.state.services.map((item, index) => {
             return (
               <article key={index} className="service">
+                {/* Now we are accessing each value of every item 
+                from the services array */}
                 <span>{item.icon}</span>
                 <h6>{item.title}</h6>
                 <p>{item.info}</p>
